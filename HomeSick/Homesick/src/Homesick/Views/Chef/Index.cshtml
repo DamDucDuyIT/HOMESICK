@@ -1,0 +1,60 @@
+@model ListViewModel
+
+@{
+    ViewData["Title"] = "Đầu bếp";
+}
+
+
+<div id="chef" class="container">
+    <img src="~/img/datmon.jpg" style="height:28em;width:50em; display:block;margin: 0 auto;"/>
+    <hr />
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Tìm theo tên: <input type="text" name="searchText" value="@ViewData["searchText"]" />
+                Tìm theo tag: <input type="text" name="sortTag" value="@ViewData["sortTag"]" />
+                &nbsp; &nbsp; 
+                <button type="submit" class="btn-info"><i class="fa fa-search"></i></button>
+                @*<input type="submit" value="Tìm kiếm" class="btn btn-primary"/>*@
+
+            </p>
+
+        </div>
+    </form>
+    <div class="row">
+
+        @foreach (var item in Model.Chefs)
+          {
+            <div class="col-6" id="chef_item">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <a asp-controller="Chef" asp-action="Details" asp-route-id="@item.ChefId"><h3 class="panel-title">@item.ChefDisplayName</h3></a>
+
+                    </div>
+                    <div class="panel-body row">
+                        <div class="col-3">
+                            <img alt="avatar" src='~/avatars/@item.ChefAvatar' class="img">
+                        </div>
+                        <div class="body-main col-9">
+                            <span><strong>Địa chỉ:</strong> @item.ChefAddress</span><br />
+                            <span><strong>Điện thoại:</strong> @item.ChefPhone</span><br />                           
+                        </div>
+                    </div>                   
+                </div>
+
+            </div>
+
+          }
+    </div>
+    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-default"
+         page-class-selected="btn-primary"
+         page-sort-tag="@ViewBag.sortTag"
+         page-search-text="@ViewBag.SearchText"
+         class="btn-group pull-right">
+    </div>
+</div>
+
+
+

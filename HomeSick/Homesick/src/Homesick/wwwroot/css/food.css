@@ -1,0 +1,41 @@
+﻿#food{
+    
+    margin-top: 10em
+}
+#food .panel-success{
+        margin-top:2em;       
+         width:100%; 
+          nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          background-color:#fff;
+          /*67BCDB*/
+}
+#food .food_img img{
+    border-radius: 2px;
+    padding-bottom:1em;
+    padding-top:1em;
+    padding-left:1em;
+    padding-right:1em;
+    display: block;
+    height: 220px;
+    width:350px;
+}
+#food .title{
+    float:left;
+    /*width: 240px*/
+}
+#food .title h3{
+    padding-left:1em;
+}
+#food .title h4{
+    padding-left:1em;
+}
+#food .buy{
+    float:right
+}
+#food .chef_name{
+    
+    margin-top:5em;
+    color:#d1d1d1
+}

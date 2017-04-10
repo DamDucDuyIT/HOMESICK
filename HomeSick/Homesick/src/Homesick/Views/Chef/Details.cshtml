@@ -1,0 +1,73 @@
+@model Homesick.Models.Chef
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div id="detail" class="container">
+    <div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3>@Model.ChefDisplayName</h3>
+            </div>            
+            <div class="panel-body row">
+                <div class="col-5">
+                    <img alt="avatar" src='~/avatars/@Model.ChefAvatar' class="img-circle img-responsive">
+                </div>
+                <div class="col-7">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>
+                                <td>Tên đầu bếp:</td>
+                                <td>@Model.ChefName</td>
+                            </tr>
+                            <tr>
+                                <td>Nghề nghiệp:</td>
+                                <td>@Model.ChefCareer</td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ:</td>
+                                <td>@Model.ChefAddress</td>
+                            </tr>
+                            <tr>
+                                <td>Điện thoại:</td>
+                                <td>@Model.ChefPhone</td>
+                            </tr>
+                            <tr>
+                                <td>Thông tin:</td>
+                                <td>@Html.Raw(@Model.ChefInfo)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="menu">
+        @foreach(var item in Model.Foods)
+        {
+            <div class="col-8">
+                <div class="row menu_heading">
+                    <div class="col-3">
+                        <img alt="avatar" src='~/avatars/@item.FoodAvatar' class="img">
+                    </div>
+                    <div class="col-9">
+                        
+                            <h3>@item.FoodName</h3>
+                            <span>@item.FoodPrice</span><br />
+                             @item.FoodInfo<br />                    
+                             <strong>Đơn vị tính: </strong>@item.FoodUnit<br />
+                    </div>
+                    
+                    
+                </div>
+                <hr />
+            </div>
+
+        }
+    </div>
+</div>

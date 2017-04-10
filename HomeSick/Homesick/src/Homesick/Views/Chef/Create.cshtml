@@ -1,0 +1,67 @@
+@model Homesick.Models.Chef
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Chef</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ChefAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefAddress" class="form-control" />
+                <span asp-validation-for="ChefAddress" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ChefCareer" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefCareer" class="form-control" />
+                <span asp-validation-for="ChefCareer" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ChefDisplayName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefDisplayName" class="form-control" />
+                <span asp-validation-for="ChefDisplayName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ChefInfo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefInfo" class="form-control" />
+                <span asp-validation-for="ChefInfo" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ChefName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefName" class="form-control" />
+                <span asp-validation-for="ChefName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ChefPhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ChefPhone" class="form-control" />
+                <span asp-validation-for="ChefPhone" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

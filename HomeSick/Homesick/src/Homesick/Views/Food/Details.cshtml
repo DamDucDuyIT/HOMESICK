@@ -1,0 +1,48 @@
+@model Homesick.Models.Food
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodAvatar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodAvatar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodInfo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodUnit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodUnit)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FoodId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

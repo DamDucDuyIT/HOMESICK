@@ -1,0 +1,57 @@
+@model ListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container" id="food">
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Tìm theo tên: <input type="text" name="searchText" value="@ViewData["searchText"]" />
+                Tìm theo tag: <input type="text" name="sortTag" value="@ViewData["sortTag"]" />
+                &nbsp; &nbsp;
+                <button type="submit" class="btn-info"><i class="fa fa-search"></i></button>
+                @*<input type="submit" value="Tìm kiếm" class="btn btn-primary"/>*@
+
+            </p>
+
+        </div>
+    </form>
+    <div class="row">
+        @foreach(var item in Model.Foods)
+        {
+            <div class="col-4">
+                <div class="panel panel-success">
+                    <div class="food_img">
+                        <img src='~/foods/@item.FoodAvatar'/>
+                    </div>
+                    <div class="food_info">
+                        <div class="title">
+                            <h3>@item.FoodName</h3>
+                            <h4>&nbsp; @item.FoodPrice.ToString("#,###")</h4>
+                        </div>
+                        <div class="buy">
+                            <button class="btn-info">Mua</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="chef_name">
+                        <hr />
+                        <strong>@item.Chef.ChefDisplayName</strong>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-default"
+         page-class-selected="btn-primary"
+         page-sort-tag="@ViewBag.sortTag"
+         page-search-text="@ViewBag.SearchText"
+         class="btn-group pull-right">
+    </div>
+</div>

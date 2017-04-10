@@ -1,0 +1,48 @@
+@model Homesick.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerDisplayName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerDisplayName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerInfo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPhone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,43 @@
+﻿#chef{
+    margin-top: 10em
+}
+#chef #chef_item{
+     margin-top:3em
+}
+#chef .panel-info{
+         width:100%; 
+          nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          background-color:#fff;
+          /*67BCDB*/
+}
+#chef .panel-info .panel-heading{
+    
+    padding: 0.5em 0 0.5em 1em;
+    background-color:#606060
+}
+#chef .panel-info .panel-heading .panel-title{
+    font-weight:bold;
+    color:#ECECEA
+}
+#chef .panel-body img{
+    padding-top:0.5em;
+    border-radius: 50%;
+    width:6em;
+    height:6em
+}
+#chef .body-main{
+    height:7em;
+    padding-top:1em;
+    color:#1d2129
+}
+
+#detail{
+    padding-top:5em;
+}
+#detail .menu span{
+    padding-right:1em;
+    padding-left:25em;
+   padding-top:20em;
+}

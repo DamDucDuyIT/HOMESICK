@@ -1,0 +1,52 @@
+@model Homesick.Models.Food
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodAvatar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodAvatar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodInfo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodUnit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FoodUnit)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
